@@ -11,7 +11,7 @@ https://www.saucedemo.com/
 - hamcrest (how to use hamcrest: https://www.baeldung.com/java-junit-hamcrest-guide)
 
 ## Starting point
-As a starting point we have empty framework with minimum functionality.
+As a starting point we have almost empty framework with minimum functionality.
 
 ## Exercises
 Excersise 0:
