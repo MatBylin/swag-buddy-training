@@ -9,3 +9,11 @@ https://www.saucedemo.com/
 - testng
 - lombok
 - hamcrest (how to use hamcrest: https://www.baeldung.com/java-junit-hamcrest-guide)
+
+## Starting point
+As a starting point we have empty framework with minimum functionality.
+
+## Exercises
+Excersise 1:
+Implement LoginPage.class page object. Within LoginPage implement locators (we are using PageFactory implementation of the POP) and methods responsible for login to the application.
+
