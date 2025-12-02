@@ -40,4 +40,5 @@ Example for sendKeys:
         element.sendKeys(text);
     }
 ```
+To use log.info(), log.warn() etc. methods add @Slf4j annotation on the class.
 Within this refactor your current page objects (LoginPage) to use our click(), and sendKeys() methods from within page object page.
