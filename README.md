@@ -9,6 +9,7 @@ https://www.saucedemo.com/
 - testng
 - lombok
 - hamcrest (how to use hamcrest: https://www.baeldung.com/java-junit-hamcrest-guide)
+- slf4j
 
 ## Starting point
 As a starting point we have almost empty framework with minimum functionality.
@@ -40,5 +41,5 @@ Example for sendKeys:
         element.sendKeys(text);
     }
 ```
-To use log.info(), log.warn() etc. methods add @Slf4j annotation on the class.
-Within this refactor your current page objects (LoginPage) to use our click(), and sendKeys() methods from within page object page.
+To use `log.info()`, `log.warn()` (and similar) methods from slf4j just add @Slf4j annotation on the class.
+Important: Within this refactor your current page objects (LoginPage) to use our click(), and sendKeys() methods from within page object page.
