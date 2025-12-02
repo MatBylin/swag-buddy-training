@@ -17,6 +17,7 @@
         <testng-version>7.11.0</testng-version>
         <hamcrest-version>3.0</hamcrest-version>
         <commons-lang3-version>3.20.0</commons-lang3-version>
+        <slf4j-simple-version>2.0.17</slf4j-simple-version>
     </properties>
 
     <dependencies>
@@ -46,6 +47,11 @@
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
             <version>${commons-lang3-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>${slf4j-simple-version}</version>
         </dependency>
     </dependencies>
 </project>
