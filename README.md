@@ -18,7 +18,7 @@ As a starting point we have almost empty framework with minimum functionality.
 :white_check_mark: Exercise 0:
 Get familiar with the 'starting point' framework code :)  
 
-:arrows_counterclockwise: Exercise 1:
+:white_check_mark: Exercise 1:
 Implement LoginPage.class page object. Within LoginPage implement locators and methods responsible for login to the application. We will use PageFactory implementation of the POP look here: https://www.browserstack.com/guide/page-object-model-in-selenium.  
 
 Exercise 2: Implement test that validates positive login scenario. Use valid credentials and make sure that login was succesffull (validate products page opened).
