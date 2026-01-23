@@ -9,6 +9,9 @@ import page.login.LoginPage;
 import utils.Config;
 import utils.Properties;
 
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.is;
+
 @Slf4j
 public class BaseTest {
 
@@ -20,7 +23,7 @@ public class BaseTest {
         openLoginPage(driver);
     }
 
-    @AfterMethod
+    @AfterMethod(alwaysRun = true)
     public void tearDown() {
         log.info("Closing browser");
         DriverProvider.removeWebDriver();
@@ -31,5 +34,6 @@ public class BaseTest {
         log.info("Opening logging page: {}", baseUrl);
         driver.get(baseUrl);
         loginPage = new LoginPage(driver);
+        assertThat(loginPage.isPageLoaded(), is(true));
     }
 }
