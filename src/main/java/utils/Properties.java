@@ -8,4 +8,7 @@ public class Properties {
     public static final String BROWSER_TYPE = "ui.browserType";
 
     public static final String GENERIC_USER_PASSWORD = "credentials.genericUserPassword";
+
+    public static final String DEFAULT_TIMEOUT = "waits.defaultTimeout";
+    public static final String DEFAULT_POLLING = "waits.defaultPolling";
 }
