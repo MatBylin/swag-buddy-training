@@ -21,7 +21,7 @@ public class LoginTest extends BaseTest {
 
     @Test
     public void validateNegativeLogin() {
-        loginPage.logIn(User.DO_NOT_EXIST_USER);
+        loginPage.logIn(User.INVALID_USER);
         assertThat("Validating 'Login' page is still loaded", loginPage.isPageLoaded(), is(true));
 
         var loginValidationError = loginPage.getLoginValidationError();
