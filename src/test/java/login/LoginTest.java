@@ -14,21 +14,18 @@ public class LoginTest extends BaseTest {
 
     @Test
     public void validatePositiveLogin() {
-        var user = User.STANDARD_USER;
-
-        loginPage.logIn(user.getLogin(), user.getPassword());
+        loginPage.logIn(User.STANDARD_USER);
         var productsPage = new ProductsPage(DriverProvider.getWebDriver());
-        assertThat(productsPage.isPageLoaded(), is(true));
+        assertThat("Validating 'Products' page loaded", productsPage.isPageLoaded(), is(true));
     }
 
     @Test
     public void validateNegativeLogin() {
-        var nonexistentUsernameData = User.NONEXISTENT_USERNAME;
+        loginPage.logIn(User.INVALID_USER);
+        assertThat("Validating 'Login' page is still loaded", loginPage.isPageLoaded(), is(true));
 
-        loginPage.logIn(nonexistentUsernameData.getLogin(), nonexistentUsernameData.getPassword());
-        var wrongLoginValidationMessage = loginPage.getWrongLoginValidationMessage();
-        assertThat(wrongLoginValidationMessage.isDisplayed(), is(true));
-        assertThat(wrongLoginValidationMessage.getText(), is(equalTo("Epic sadface: Username and password do not match any user in this service")));
-        assertThat(loginPage.isPageLoaded(), is(true));
+        var loginValidationError = loginPage.getLoginValidationError();
+        assertThat(loginValidationError.isDisplayed(), is(true));
+        assertThat(loginValidationError.getText(), is(equalTo("Epic sadface: Username and password do not match any user in this service")));
     }
 }

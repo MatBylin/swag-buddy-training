@@ -20,6 +20,7 @@ public class ProductsPage extends BasePage {
         super(driver);
     }
 
+    @Override
     public boolean isPageLoaded() {
         return Objects.requireNonNull(driver.getCurrentUrl()).endsWith(PAGE_PATH) && getPageTitle().getText().equals(PAGE_HEADER);
     }

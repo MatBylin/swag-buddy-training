@@ -1,15 +1,18 @@
 package page.login;
 
 import lombok.Getter;
+import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import page.BasePage;
 import utils.Config;
 import utils.Properties;
+import utils.User;
 
 import java.util.Objects;
 
+@Slf4j
 @Getter
 public class LoginPage extends BasePage {
     @FindBy(id = "user-name")
@@ -19,26 +22,20 @@ public class LoginPage extends BasePage {
     @FindBy(id = "login-button")
     private WebElement loginButton;
     @FindBy(xpath = "//h3[@data-test='error']")
-    private WebElement wrongLoginValidationMessage;
+    private WebElement loginValidationError;
 
     public LoginPage(WebDriver driver) {
         super(driver);
     }
 
-    private void fillUserName(String username) {
-        userNameInput.sendKeys(username);
-    }
-
-    private void fillPassword(String password) {
-        passwordInput.sendKeys(password);
-    }
-
-    public void logIn(String username, String password) {
-        fillUserName(username);
-        fillPassword(password);
+    public void logIn(User user) {
+        log.info("Logging using: `%s` credentials".formatted(user));
+        userNameInput.sendKeys(user.getLogin());
+        passwordInput.sendKeys(user.getPassword());
         loginButton.click();
     }
 
+    @Override
     public boolean isPageLoaded() {
         return Objects.requireNonNull(driver.getCurrentUrl()).equals(Config.getProperty(Properties.BASE_URL))
                 && getUserNameInput().isDisplayed()
