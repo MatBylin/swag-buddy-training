@@ -4,7 +4,8 @@ import lombok.Getter;
 
 @Getter
 public enum User {
-    STANDARD_USER("standard_user", Config.getProperty(Properties.STANDARD_USER_PASSWORD));
+    STANDARD_USER("standard_user", Config.getProperty(Properties.STANDARD_USER_PASSWORD)),
+    NONEXISTENT_USERNAME("standard_usr", Config.getProperty(Properties.STANDARD_USER_PASSWORD));
 
     private final String login;
     private final String password;
