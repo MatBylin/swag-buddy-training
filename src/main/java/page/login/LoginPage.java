@@ -18,6 +18,8 @@ public class LoginPage extends BasePage {
     private WebElement passwordInput;
     @FindBy(id = "login-button")
     private WebElement loginButton;
+    @FindBy(xpath = "//h3[@data-test='error']")
+    private WebElement wrongLoginValidationMessage;
 
     public LoginPage(WebDriver driver) {
         super(driver);
@@ -38,9 +40,6 @@ public class LoginPage extends BasePage {
     }
 
     public boolean isPageLoaded() {
-
-        System.out.println(driver.getCurrentUrl() + " = " + Properties.BASE_URL + "?");
-
         return Objects.requireNonNull(driver.getCurrentUrl()).equals(Config.getProperty(Properties.BASE_URL))
                 && getUserNameInput().isDisplayed()
                 && getPasswordInput().isDisplayed();
