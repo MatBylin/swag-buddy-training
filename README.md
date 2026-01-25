@@ -31,7 +31,7 @@ TODO:
 - Additionally give WaitProvider ability to create custom waits upon provided timeouts by user
 - In BasePage create field `protected FluentWait<WebDriver> wait;` and instantiate it within BasePage contructor
 
-:arrows_counterclockwise: Exercise 5: Within BasePage we have available wait object. Implement two method responsible for clicking and sending keys to an element. (we are going implement waiting and logging within this methods).
+:white_check_mark: Exercise 5: Within BasePage we have available wait object. Implement two method responsible for clicking and sending keys to an element. (we are going implement waiting and logging within this methods).
 Method click() should wait for `elementToBeClickable` and sendKeys should wait for `visibilityOf` our elements.
 Example for sendKeys:
 ```

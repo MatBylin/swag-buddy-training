@@ -30,9 +30,9 @@ public class LoginPage extends BasePage {
 
     public void logIn(User user) {
         log.info("Logging using: `%s` credentials".formatted(user));
-        userNameInput.sendKeys(user.getLogin());
-        passwordInput.sendKeys(user.getPassword());
-        loginButton.click();
+        sendKeys(userNameInput, user.getLogin());
+        sendKeys(passwordInput, user.getPassword());
+        click(loginButton);
     }
 
     @Override
