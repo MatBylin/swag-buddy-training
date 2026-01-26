@@ -33,7 +33,7 @@ public class BaseTest {
         var baseUrl = Config.getProperty(Properties.BASE_URL);
         log.info("Opening logging page: {}", baseUrl);
         driver.get(baseUrl);
-        loginPage = new LoginPage(driver);
+        loginPage = new LoginPage();
         assertThat(loginPage.isPageLoaded(), is(true));
     }
 }

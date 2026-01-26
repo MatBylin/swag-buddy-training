@@ -2,7 +2,6 @@ package page.login;
 
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import page.BasePage;
@@ -23,10 +22,6 @@ public class LoginPage extends BasePage {
     private WebElement loginButton;
     @FindBy(xpath = "//h3[@data-test='error']")
     private WebElement loginValidationError;
-
-    public LoginPage(WebDriver driver) {
-        super(driver);
-    }
 
     public void logIn(User user) {
         log.info("Logging using: `%s` credentials".formatted(user));
