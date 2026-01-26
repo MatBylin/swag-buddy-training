@@ -1,7 +1,6 @@
 package login;
 
 import base.BaseTest;
-import driver.DriverProvider;
 import org.testng.annotations.Test;
 import page.products.ProductsPage;
 import utils.User;
@@ -15,7 +14,7 @@ public class LoginTest extends BaseTest {
     @Test
     public void validatePositiveLogin() {
         loginPage.logIn(User.STANDARD_USER);
-        var productsPage = new ProductsPage(DriverProvider.getWebDriver());
+        var productsPage = new ProductsPage();
         assertThat("Validating 'Products' page loaded", productsPage.isPageLoaded(), is(true));
     }
 
