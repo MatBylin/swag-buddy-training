@@ -26,4 +26,10 @@ jobs:
       - name: Run Tests with Maven
         run: mvn clean test -Dheadless=true
 
-# TODO      - name: Export test results
+      - name: Publish test report
+        if: always()
+        uses: dorny/test-reporter@v1
+        with:
+          name: Selenium Tests
+          path: target/surefire-reports/TEST-*.xml
+          reporter: java-junit
